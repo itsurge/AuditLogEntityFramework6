@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OA90Ydr3ZztPJR6EMlcqPF+PrI9i1BMt+96KJpEaeJc=",
+  "Source": "AuditLog.WebApi",
+  "BasePath": "_content/AuditLog.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
