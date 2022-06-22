@@ -12,12 +12,12 @@ builder.Host.UseSerilog((ctx, lc) => lc
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<ProductDbContext>();
-builder.Services.AddDbContext<ProductEf6Dbcontext>();
+builder.Services.AddDbContext<ProductEf6TemporalDbContext>();
+builder.Services.AddDbContext<ProductAuditNetDbContext>();
 
 Audit.Core.Configuration.DataProvider = new EntityFrameworkDataProvider()
 {
-    DbContextBuilder = ev => new ProductDbContext(),
+    DbContextBuilder = ev => new ProductAuditNetDbContext(),
     AuditTypeMapper = (t, ee) => t == typeof(Product) ? typeof(ProductAudit)  : null,
     AuditEntityAction = (evt, entry, auditEntity) =>
     {

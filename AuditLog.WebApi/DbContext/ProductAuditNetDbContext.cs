@@ -4,21 +4,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AuditLog.WebApi.DbContext;
 
-public class ProductDbContext:Microsoft.EntityFrameworkCore.DbContext
+public class ProductAuditNetDbContext:Microsoft.EntityFrameworkCore.DbContext
 {
-   // public ProductDbContext(DbContextOptions<ProductDbContext> options):base(options)
-   // {
-   //    
-   // }
-
-   public ProductDbContext()
+   public ProductAuditNetDbContext()
    {
    }
   
 
    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
    {
-      optionsBuilder.UseSqlServer("Server=.;Database=product;User Id=sa;Password=12345678");
+      optionsBuilder.UseSqlServer("Server=.;Database=ProductAuditLog;User Id=sa;Password=12345678");
       optionsBuilder.AddInterceptors(new AuditSaveChangesInterceptor());
    }
    public virtual DbSet<Product> Products { get; set; }
