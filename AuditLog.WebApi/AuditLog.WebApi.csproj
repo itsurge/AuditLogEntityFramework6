@@ -21,6 +21,11 @@
     <ItemGroup>
       <TypeScriptCompile Include="K6\Auditnet.ts" />
       <TypeScriptCompile Include="K6\Ef6Temporal.ts" />
+      <TypeScriptCompile Include="K6\Product.ts" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Auditable\Auditable.csproj" />
     </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ let ErrorCount = new Counter('errors');
 let ErrorRate = new Rate('error_rate');
 
 export let options = {
-   
+
     stages: [
         { duration: "5s", target: 100 },
         { duration: "15s", target: 100 },
@@ -25,13 +25,13 @@ export default function () {
     const number= Math.floor(Math.random() * 10000) + 1;
     const url=""
     var payload = JSON.stringify({
-        id: "363b81c5-c4ed-4072-82d0-01740fc44519",
+        id: "f8346439-ded5-4706-b648-51c3ea90f30f",
         name: "string"+number,
         category: "string"+number,
         price: number
     });
     //http.post(url, payload, params);
-    let res = http.put('https://localhost:7218/api/ProductAuditNet',payload, params);
+    let res = http.put('https://localhost:7218/api/Product',payload, params);
     let success = check(res, { "status is 200": r => r.status == 200 })
     if (!success) {
         ErrorCount.add(1);

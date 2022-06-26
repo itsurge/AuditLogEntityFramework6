@@ -14,6 +14,7 @@ builder.Host.UseSerilog((ctx, lc) => lc
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ProductEf6TemporalDbContext>();
 builder.Services.AddDbContext<ProductAuditNetDbContext>();
+builder.Services.AddDbContext<ProductDbContext>();
 
 Audit.Core.Configuration.DataProvider = new EntityFrameworkDataProvider()
 {
@@ -25,6 +26,7 @@ Audit.Core.Configuration.DataProvider = new EntityFrameworkDataProvider()
         a.AuditDate = DateTime.UtcNow;
         a.UserName = evt.Environment.UserName;
         a.AuditAction = entry.Action;
+       
         // Insert, Update, Delete
         return Task.FromResult(true); // return false to ignore the audit
     }
@@ -42,11 +44,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-    .Enrich.FromLogContext()
-    .WriteTo.Console()
-    .CreateLogger();
+
 app.UseHttpsRedirection();
 app.UseSerilogRequestLogging();
 app.UseAuthorization();

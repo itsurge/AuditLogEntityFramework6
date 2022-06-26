@@ -926,6 +926,20 @@
             "rid": "win"
           }
         }
+      },
+      "Auditable/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.6",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.6"
+        },
+        "compile": {
+          "bin/placeholder/Auditable.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Auditable.dll": {}
+        }
       }
     }
   },
@@ -2592,11 +2606,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Auditable/1.0.0": {
+      "type": "project",
+      "path": "../Auditable/Auditable.csproj",
+      "msbuildProject": "../Auditable/Auditable.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Audit.EntityFramework.Core >= 19.1.4",
+      "Auditable >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.6",
@@ -2635,7 +2655,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\smael\\RiderProjects\\AuditLog\\Auditable\\Auditable.csproj": {
+              "projectPath": "C:\\Users\\smael\\RiderProjects\\AuditLog\\Auditable\\Auditable.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

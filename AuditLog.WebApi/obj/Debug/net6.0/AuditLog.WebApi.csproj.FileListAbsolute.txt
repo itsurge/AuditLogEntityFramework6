@@ -71,3 +71,5 @@ C:\Users\smael\RiderProjects\AuditLog\AuditLog.WebApi\bin\Debug\net6.0\Serilog.S
 C:\Users\smael\RiderProjects\AuditLog\AuditLog.WebApi\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\Users\smael\RiderProjects\AuditLog\AuditLog.WebApi\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\Users\smael\RiderProjects\AuditLog\AuditLog.WebApi\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\smael\RiderProjects\AuditLog\AuditLog.WebApi\bin\Debug\net6.0\Auditable.dll
+C:\Users\smael\RiderProjects\AuditLog\AuditLog.WebApi\bin\Debug\net6.0\Auditable.pdb
